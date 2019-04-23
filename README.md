@@ -1,7 +1,7 @@
 # CS3704 project
 ## ER Diagram
 
-![ER diagram](./diagrams/ER diagram.png)
+![ER diagram](./diagrams/ERdiagram.png)
 
 ## Relational Diagram
 
