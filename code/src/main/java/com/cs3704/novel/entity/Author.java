@@ -4,14 +4,15 @@ import lombok.*;
 import org.hibernate.validator.constraints.UniqueElements;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
-@Table(name = "author")
+@Table(name = "Author")
 @Setter @Getter
 @NoArgsConstructor
 @EqualsAndHashCode
 @ToString
-public class author {
+public class Author {
     @SequenceGenerator(name = "author_id", sequenceName = "author_id", allocationSize = 1)
     @GeneratedValue(generator = "author_id")
 
@@ -29,4 +30,11 @@ public class author {
 
     @Column
     private String contact;
+
+    @ManyToMany
+    @JoinTable(
+            name = "contribute",
+            joinColumns = @JoinColumn(name = "author_id"),
+            inverseJoinColumns = @JoinColumn(name = "novel_id"))
+    Set<Novel> novels;
 }
