@@ -27,7 +27,7 @@ CREATE TABLE novel (
 	PRIMARY KEY (id)
 );
 
-CREATE TABLE contribute (
+CREATE TABLE author_novel (
 	author_id INT not null, 
 	novel_id INT not null, 
 	PRIMARY KEY (author_id, novel_id),

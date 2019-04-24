@@ -1,16 +1,17 @@
 package com.cs3704.novel.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
+
 
 @Entity
 @Table(name = "Novel")
-@Setter @Getter
-@NoArgsConstructor
-@EqualsAndHashCode
-@ToString
+@Data
 public class Novel {
 
     @SequenceGenerator(name = "novel_id", sequenceName = "novel_id", allocationSize = 1)
@@ -22,6 +23,7 @@ public class Novel {
     @Column
     private String title;
 
-    @ManyToMany(mappedBy = "novels")
-    private Set<Author> authors;
+//    @JsonIgnore
+//    @ManyToMany(mappedBy = "novels", fetch = FetchType.LAZY)
+//    private Set<Author> authors = new HashSet<>();
 }
