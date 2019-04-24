@@ -35,6 +35,6 @@ public class Novel {
 
     @Override
     public String toString() {
-        return "Department [id=" + id + ", title=" + title + "]";
+        return "Novel [id=" + id + ", title=" + title + "]";
     }
 }

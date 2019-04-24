@@ -65,11 +65,11 @@ public class Author {
 
     @Override
     public String toString(){
-        return "Employee{" +
+        return "Author{" +
                 "id=" + id +
                 ", userName='" + userName + '\'' +
                 ", name='" + name + '\'' +
-                ", contact=" + contact +
+                ", contact='" + contact + '\'' +
                 '}';
     }
 }

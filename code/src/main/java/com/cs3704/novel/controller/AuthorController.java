@@ -17,14 +17,14 @@ public class AuthorController {
     @Autowired
     AuthorRepository authorRepository;
 
-    @GetMapping("/au")
-    public String list(Model model, HttpSession session){
-
-        Object username = session.getAttribute("loginUser");
-        System.out.println(username.toString());
-        Author author = authorRepository.findByUserName(username.toString());
-
-        model.addAttribute("au", author);
-        return "au/novel";
-    }
+//    @GetMapping("/au")
+//    public String list(Model model, HttpSession session){
+//
+//        Object username = session.getAttribute("loginUser");
+//        System.out.println(username.toString());
+//        Author author = authorRepository.findByUserName(username.toString());
+//
+//        model.addAttribute("au", author);
+//        return "au/novel";
+//    }
 }

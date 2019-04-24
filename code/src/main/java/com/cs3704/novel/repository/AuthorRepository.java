@@ -26,7 +26,7 @@ public class AuthorRepository{
         authors.put(author.getId(), author);
     }
 
-    public Collection<Author> getAll(){
+    public Collection<Author> findAll(){
         return authors.values();
     }
 
@@ -36,5 +36,14 @@ public class AuthorRepository{
 
     public void delete(Integer id){
         authors.remove(id);
+    }
+
+    public Author findByUserName(String username){
+        Collection<Author> allAuthor = authors.values();
+        for (Author author: allAuthor){
+            if (author.getUserName().equals(username))
+                return author;
+        }
+        return null;
     }
 }

@@ -16,32 +16,32 @@ public class LoginController {
     @Autowired
     AuthorRepository authorRepository;
 
-    @GetMapping("/test")
-    public String test(){
-        System.out.println(authorRepository.findAll());
-        return "login";
-    }
+//    @GetMapping("/test")
+//    public String test(){
+//        System.out.println(authorRepository.findAll());
+//        return "login";
+//    }
 
-    @PostMapping(value = "/user/login")
-    public String login(@RequestParam("username") String username,
-                        @RequestParam("password") String password,
-                        Map<String, Object> msg, HttpSession session){
-        try{
-            Author author = authorRepository.findByUserName(username);
-            System.out.println(author);
-            if (author.getPassword().equals(password)){
-                session.setAttribute("loginUser", username);
-                return "redirect:/main.html";
-            }
-            else {
-                msg.put("msg", "username or password is wrong");
-                return "login";
-            }
-        }
-        catch (Exception e){
-            msg.put("msg", "username or password is wrong");
-            return "login";
-        }
-
-    }
+//    @PostMapping(value = "/user/login")
+//    public String login(@RequestParam("username") String username,
+//                        @RequestParam("password") String password,
+//                        Map<String, Object> msg, HttpSession session){
+//        try{
+//            Author author = authorRepository.findByUserName(username);
+//            System.out.println(author);
+//            if (author.getPassword().equals(password)){
+//                session.setAttribute("loginUser", username);
+//                return "redirect:/main.html";
+//            }
+//            else {
+//                msg.put("msg", "username or password is wrong");
+//                return "login";
+//            }
+//        }
+//        catch (Exception e){
+//            msg.put("msg", "username or password is wrong");
+//            return "login";
+//        }
+//
+//    }
 }
