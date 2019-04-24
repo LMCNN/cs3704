@@ -36,6 +36,14 @@ public class Author {
     @Column
     private String contact;
 
+    public String getName(){
+        return this.name;
+    }
+
+    public String getContact(){
+        return this.contact;
+    }
+
     public String getPassword(){
         return this.password;
     }
