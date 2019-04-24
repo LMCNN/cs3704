@@ -1,29 +1,40 @@
 package com.cs3704.novel.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import lombok.*;
+import java.util.*;
 
-import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
-
-
-@Entity
-@Table(name = "Novel")
-@Data
 public class Novel {
-
-    @SequenceGenerator(name = "novel_id", sequenceName = "novel_id", allocationSize = 1)
-    @GeneratedValue(generator = "novel_id")
-
-    @Id
-    private Long id;
-
-    @Column
+    private Integer id;
     private String title;
+    private List<Author> authors;
 
-//    @JsonIgnore
-//    @ManyToMany(mappedBy = "novels", fetch = FetchType.LAZY)
-//    private Set<Author> authors = new HashSet<>();
+    public Novel (int id, String title){
+        this.id = id;
+        this.title = title;
+        authors = new LinkedList<>();
+    }
+
+    public int getId(){
+        return this.id;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void addAuthor(Author author){
+        authors.add(author);
+    }
+
+    public Collection<Author> getAuthors() {
+        return authors;
+    }
+
+    @Override
+    public String toString() {
+        return "Department [id=" + id + ", title=" + title + "]";
+    }
 }
