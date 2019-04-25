@@ -23,7 +23,7 @@
 1. Run the code: `git clone https://github.com/LMCNN/cs3704.git` to copy the code to your local machine.
 2. Using Intellij IDEA to open the pom.xml file in the code directory as a project
 
-#### Run the program with the terminal:
+#### Run the program with the terminal/gitbash:
 
 1. Go to the code directory
 2. run: `./mvnw spring-boot:run`
