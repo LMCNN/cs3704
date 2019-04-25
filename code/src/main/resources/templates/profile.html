@@ -1,10 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <style>
+        table,th,td
+        {
+            border:1px solid black;
+        }
+    </style>
+
     <title>Profile</title>
 </head>
 <body>
-    <h1>Profile</h1>
+    <h1>[[${session.loginUser}]]'s Profile</h1>
+    <p>Reward: 0</p>
+
+    <button>
+        <a th:href="@{/delAuthor}">Delete Author</a>
+    </button>
+
+    <button>
+        <a th:href="@{/update}">Update Profile</a>
+    </button>
+
+    <button>
+        <a th:href="@{/listNovel}">novels</a>
+    </button>
 </body>
 </html>

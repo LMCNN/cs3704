@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
-    <title>Create Author</title>
+    <title>Update Profile</title>
 </head>
 <style>
     input[type=text], select {
@@ -37,27 +37,25 @@
     }
 </style>
 <body>
+    <div>
+        <form th:action="@{/update}" method="post">
 
-<div>
-    <form th:action="@{/au}" method="post">
-        <label for="id">Id</label>
-        <input type="text" id="id" name="id" placeholder="id">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="name">
 
-        <label for="username">User Name</label>
-        <input type="text" id="username" name="userName" placeholder="username">
+            <label for="password">Password</label>
+            <input type="text" id="password" name="password" placeholder="password">
 
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="name">
+            <label for="contact">Contact</label>
+            <input type="text" id="contact" name="contact" placeholder="contact">
 
-        <label for="password">Password</label>
-        <input type="text" id="password" name="password" placeholder="password">
+            <input type="submit" value="Update">
+        </form>
+    </div>
 
-        <label for="contact">Contact</label>
-        <input type="text" id="contact" name="contact" placeholder="contact">
-
-        <input type="submit" value="Create">
-    </form>
-</div>
+</body>
+</html>
+<body>
 
 </body>
 </html>

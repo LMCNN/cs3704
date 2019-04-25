@@ -4,6 +4,7 @@ import com.cs3704.novel.entity.Author;
 import com.cs3704.novel.repository.AuthorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
@@ -24,12 +25,14 @@ public class LoginController {
     @PostMapping(value = "/user/login")
     public String login(@RequestParam("username") String username,
                         @RequestParam("password") String password,
-                        Map<String, Object> msg, HttpSession session){
+                        Map<String, Object> msg, HttpSession session,
+                        Model model){
         try{
             Author author = authorRepository.findByUserName(username);
             System.out.println(author);
             if (author.getPassword().equals(password)){
                 session.setAttribute("loginUser", username);
+                model.addAttribute("currUser", author);
                 return "redirect:/main.html";
             }
             else {
@@ -41,6 +44,5 @@ public class LoginController {
             msg.put("msg", "username or password is wrong");
             return "login";
         }
-
     }
 }

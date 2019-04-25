@@ -44,4 +44,10 @@ public class AuthorRepositoryTests {
         Assert.assertNull(authorRepository.findByUserName("test"));
         Assert.assertEquals(authorRepository.findByUserName("admin").getPassword(),"123456");
     }
+    //    Unit Test 19
+    @Test
+    public void TestFindIdByName(){
+        Assert.assertTrue(authorRepository.findIdByName("admin")==1);
+        Assert.assertNull(authorRepository.findIdByName("test"));
+    }
 }

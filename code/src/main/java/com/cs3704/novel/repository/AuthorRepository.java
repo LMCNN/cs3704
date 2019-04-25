@@ -46,4 +46,13 @@ public class AuthorRepository{
         }
         return null;
     }
+
+    public Integer findIdByName(String username){
+        Collection<Author> allAuthor = authors.values();
+        for (Author author: allAuthor){
+            if (author.getUserName().equals(username))
+                return author.getId();
+        }
+        return null;
+    }
 }
