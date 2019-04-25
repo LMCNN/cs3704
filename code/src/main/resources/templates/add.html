@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Create Author</title>
+</head>
+<style>
+    input[type=text], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=submit] {
+        width: 100%;
+        background-color: #3453af;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+        background-color: #1e20a0;
+    }
+
+    div {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+    }
+</style>
+<body>
+
+<div>
+    <form th:action="@{/au}" method="post">
+        <p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+        <label for="id">Id</label>
+        <input type="text" id="id" name="id" placeholder="id">
+
+        <label for="username">User Name</label>
+        <input type="text" id="username" name="userName" placeholder="username">
+
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="name">
+
+        <label for="password">Password</label>
+        <input type="text" id="password" name="password" placeholder="password">
+
+        <label for="contact">Contact</label>
+        <input type="text" id="contact" name="contact" placeholder="contact">
+
+        <input type="submit" value="Create">
+    </form>
+</div>
+
+</body>
+</html>

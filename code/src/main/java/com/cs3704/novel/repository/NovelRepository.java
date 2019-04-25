@@ -1,7 +1,6 @@
 package com.cs3704.novel.repository;
 
 import com.cs3704.novel.entity.Novel;
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Collection;
