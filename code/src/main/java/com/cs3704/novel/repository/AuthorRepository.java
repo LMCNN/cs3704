@@ -1,6 +1,7 @@
 package com.cs3704.novel.repository;
 
 import com.cs3704.novel.entity.Author;
+import com.cs3704.novel.entity.Novel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -54,5 +55,11 @@ public class AuthorRepository{
                 return author.getId();
         }
         return null;
+    }
+
+    public void addNovel(Integer author_id, Novel novel){
+        Author author = authors.get(author_id);
+        author.addNovel(novel);
+        novel.addAuthor(author);
     }
 }

@@ -1,6 +1,7 @@
 package com.cs3704.novel;
 
 import com.cs3704.novel.entity.Author;
+import com.cs3704.novel.entity.Novel;
 import com.cs3704.novel.repository.AuthorRepository;
 import org.junit.Assert;
 import org.junit.Before;
@@ -49,5 +50,15 @@ public class AuthorRepositoryTests {
     public void TestFindIdByName(){
         Assert.assertTrue(authorRepository.findIdByName("admin")==1);
         Assert.assertNull(authorRepository.findIdByName("test"));
+    }
+
+    //    Unit Test 20
+    @Test
+    public void TestAddNovel(){
+        Novel novel = new Novel(1, "testTitle");
+        authorRepository.addNovel(1, novel);
+        Assert.assertEquals(authorRepository.get(1).getNovels().toString(), "[Novel [id=1, title=testTitle]]");
+        Assert.assertEquals(novel.getAuthors().toString(),
+                "[Author{id=1, userName='admin', name='superuser', contact='admin@abc'}]");
     }
 }

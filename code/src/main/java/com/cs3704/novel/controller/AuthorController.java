@@ -1,6 +1,7 @@
 package com.cs3704.novel.controller;
 
 import com.cs3704.novel.entity.Author;
+import com.cs3704.novel.entity.Novel;
 import com.cs3704.novel.repository.AuthorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,7 +29,7 @@ public class AuthorController {
     }
 
     @PostMapping("/au")
-    public String addAuthor(Author author, Map<String, Object> msg){
+    public String addAuthor(Author author){
         System.out.println("Author info: " + author);
         authorRepository.save(author);
         return "redirect:/";
@@ -54,5 +55,20 @@ public class AuthorController {
         System.out.println("updated author: " + author);
         authorRepository.save(author);
         return "redirect:/main.html";
+    }
+
+    @GetMapping("/addNovel")
+    public String toAddNovelPage(){
+        return "addNovel";
+    }
+
+    @PostMapping("/addNovel")
+    public String addNovel(Novel novel, HttpSession session){
+        System.out.println("Novel info: " + novel);
+        String username = session.getAttribute("loginUser").toString();
+        System.out.println("Current UserName: " + username);
+        int id = authorRepository.findIdByName(username);
+        authorRepository.addNovel(id, novel);
+        return "redirect:main.html";
     }
 }
