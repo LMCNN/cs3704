@@ -29,5 +29,12 @@
 2. run: `./mvnw spring-boot:run`
 3. Browser address: localhost:8080
 
-*~~There are 21 unit tests inside the `/code/src/test/java/com/cs3704/novel` directory*~~
+*~~Unit tests inside the `/code/src/test/java/com/cs3704/novel` directory*~~
 
+#### Validation test cases 
+
+1. Click the sign up button to register a user author (username: test, password: 123) .
+2. Enter the username test on the login page and enter a wrong password. The web page will display an error message.
+3. Entering the correct password will go to the profile page.
+4. Click the Update button to update the password. Go back to the login page and log in using the original password. The page will show an error message. Re-login with a new password.
+5. Click the delete button and you will be returned to the login page. The original account could not be logged in.
