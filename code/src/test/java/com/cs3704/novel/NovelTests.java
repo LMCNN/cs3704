@@ -50,7 +50,7 @@ public class NovelTests {
 //  Unit Test 18
   @Test
   public void TestAddAuthors() {
-      Assert.assertEquals(testNovel.getAuthors().toSting(), "[]");
+      Assert.assertEquals(testNovel.getAuthors().toString(), "[]");
       testNovel.addAuthor(new Author(1, "username", "name", "123", "test@test"));
       Assert.assertEquals(testNovel.getAuthors().toString(),
               "[Author{id=1, userName='username', name='name', contact='test@test'}]");

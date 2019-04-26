@@ -1,5 +1,60 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<style>
+		body {
+			max-width: 500px;
+			padding: 20px 20px;
+			background: #f4f7f8;
+			margin: 10px auto;
+			background: #f4f7f8;
+			border-radius: 8px;
+			font-family: Georgia, "Times New Roman", Times, serif;
+		}
+		form {
+			margin-top: 20px;
+		}
+		label {
+			display: block;
+			margin-bottom: 6px;
+		}
+		input[type=text],
+		input[type=password],
+		select {
+			width: 100%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			display: inline-block;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: border-box;
+		}
+
+		button
+		{
+			position: relative;
+			display: block;
+			padding: 9px 9px 8px 9px;
+			color: #FFF;
+			background: #1abc9c;
+			font-size: 16px;
+			font-style: normal;
+			width: 100%;
+			border: 1px solid #16a085;
+			margin-bottom: 10px;
+			border-radius: 5px;
+
+		}
+		button:hover
+		{
+			background: #109177;
+		}
+		a{
+			text-decoration: none;
+			font-size: 16px;
+			font-style: normal;
+			color: #FFF;
+		}
+	</style>
 	<head>
 		<title>Sign in</title>
 	</head>
@@ -13,7 +68,7 @@
             <br>
 			<label>Password </label>
 			<input type="password" name="password" class="form-control" placeholder="Password" required="">
-            <br>
+            <br><br>
 			<button type="submit">Sign in</button>
 		</form>
 

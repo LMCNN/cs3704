@@ -74,7 +74,7 @@ public class AuthorTests {
     public void TestSetContact() {
         testAuthor.setContact("new@test");
         Assert.assertEquals(testAuthor.getContact(), "new@test");
-        Assert.assertNotEquals(testAuthor.getContract(), "test@test");
+        Assert.assertNotEquals(testAuthor.getContact(), "test@test");
     }
 
     //    Unit Test 10
@@ -87,7 +87,7 @@ public class AuthorTests {
     //    Unit Test 11
     @Test
     public void TestAddNovels() {
-        Assert.assertEquals(testAuthor.getNovels().toSting(), "[]");
+        Assert.assertEquals(testAuthor.getNovels().toString(), "[]");
         testAuthor.addNovel(new Novel(1, "title1"));
         Assert.assertEquals(testAuthor.getNovels().toString(),"[Department [id=1, title=title1]]");
         testAuthor.addNovel(new Novel(2, "title2"));
