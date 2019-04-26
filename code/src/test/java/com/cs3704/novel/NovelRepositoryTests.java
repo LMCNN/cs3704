@@ -14,7 +14,7 @@ public class NovelRepositoryTests {
         novelRepository = new NovelRepository();
     }
 
-    //    Unit Test 21
+    //    Unit Test 23
     @Test
     public void TestALL() {
         Assert.assertEquals(novelRepository.getNovels().toString(),

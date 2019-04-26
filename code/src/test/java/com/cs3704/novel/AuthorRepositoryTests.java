@@ -15,7 +15,7 @@ public class AuthorRepositoryTests {
         authorRepository = new AuthorRepository();
     }
 
-    //    Unit Test 17
+    //    Unit Test 19
     @Test
     public void TestGetAll() {
 
@@ -39,20 +39,20 @@ public class AuthorRepositoryTests {
         Assert.assertEquals(authorRepository.findAll().size(), 2);
     }
 
-    //    Unit Test 18
+    //    Unit Test 20
     @Test
     public void TestFindByUserName() {
         Assert.assertNull(authorRepository.findByUserName("test"));
         Assert.assertEquals(authorRepository.findByUserName("admin").getPassword(),"123456");
     }
-    //    Unit Test 19
+    //    Unit Test 21
     @Test
     public void TestFindIdByName(){
         Assert.assertTrue(authorRepository.findIdByName("admin")==1);
         Assert.assertNull(authorRepository.findIdByName("test"));
     }
 
-    //    Unit Test 20
+    //    Unit Test 22
     @Test
     public void TestAddNovel(){
         Novel novel = new Novel(1, "testTitle");

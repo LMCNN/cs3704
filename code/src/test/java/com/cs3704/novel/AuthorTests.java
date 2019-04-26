@@ -46,6 +46,7 @@ public class AuthorTests {
     public void TestSetName(){
         testAuthor.setName("new_name");
         Assert.assertEquals(testAuthor.getName(), "new_name");
+        Assert.assertNotEquals(testAuthor.getName(), "name");
     }
 
     //    Unit Test 6
@@ -59,6 +60,7 @@ public class AuthorTests {
     public void TestSetPassword() {
         testAuthor.setPassword("123456");
         Assert.assertEquals(testAuthor.getPassword(), "123456");
+        Assert.assertNotEquals(testAuthor.getPassword(), "123");
     }
 
     //    Unit Test 8
@@ -72,16 +74,28 @@ public class AuthorTests {
     public void TestSetContact() {
         testAuthor.setContact("new@test");
         Assert.assertEquals(testAuthor.getContact(), "new@test");
+        Assert.assertNotEquals(testAuthor.getContract(), "test@test");
     }
 
     //    Unit Test 10
     @Test
-    public void TestGetAndAddNovels() {
+    public void TestGetNovels() {
         testAuthor.addNovel(new Novel(1, "title1"));
         Assert.assertEquals(testAuthor.getNovels().toString(),"[Department [id=1, title=title1]]");
     }
-
+    
     //    Unit Test 11
+    @Test
+    public void TestAddNovels() {
+        Assert.assertEquals(testAuthor.getNovels().toSting(), "[]");
+        testAuthor.addNovel(new Novel(1, "title1"));
+        Assert.assertEquals(testAuthor.getNovels().toString(),"[Department [id=1, title=title1]]");
+        testAuthor.addNovel(new Novel(2, "title2"));
+        Assert.assertEquals(testAuthor.getNovels().toString(), 
+                "[Department [id=1,title=title1], [Department [id=2,title=title2]]");
+    }
+
+    //    Unit Test 12
     @Test
     public void TestToString() {
         Assert.assertEquals(testAuthor.toString(),
