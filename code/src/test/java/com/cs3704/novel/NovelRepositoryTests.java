@@ -23,4 +23,17 @@ public class NovelRepositoryTests {
         Assert.assertEquals(novelRepository.getNovel(1).toString(),
                 "Novel [id=1, title=novel1]");
     }
+
+    //    Unit Test 24
+    @Test
+    public void TestNULL() {
+        Assert.assertNull(novelRepository.getNovel(0));
+    }
+
+    //    Unit Test 25
+    @Test
+    public void TestNovels() {
+        NovelRepository novelRepository2 = new NovelRepository();
+        Assert.assertEquals(novelRepository.getNovels(), novelRepository2.getNovels());
+    }
 }
