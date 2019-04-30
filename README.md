@@ -3,7 +3,7 @@
 ## Use Cases
 
 1. click sign up button to create author
-2. sign with username and password (admin, 123456)
+2. sign in with username and password (admin, 123456)
 3. click delete button to delete author
 4. click update button to update author's profile
 5. click Add Novel button to add a novel to current author
